@@ -21,8 +21,10 @@ export function HeroSection() {
         </p>
 
         {/* メインタイトル */}
-        <h1 className="animate-fade-up mt-6 font-display text-6xl font-light italic tracking-[0.15em] text-white opacity-0 [animation-delay:400ms] [animation-fill-mode:forwards] sm:text-7xl md:text-8xl">
-          {SITE_CONFIG.nameEn}
+        <h1 className="animate-fade-up mt-6 opacity-0 [animation-delay:400ms] [animation-fill-mode:forwards]">
+          <span className="font-display text-7xl font-light italic tracking-[0.1em] text-white sm:text-8xl md:text-9xl">
+            <span className="text-gold-400">美</span>men
+          </span>
         </h1>
 
         {/* キャッチコピー */}

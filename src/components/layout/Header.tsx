@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { NAV_LINKS } from "@/constants/navigation";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { MobileMenu } from "./MobileMenu";
@@ -30,13 +31,14 @@ export function Header() {
       >
         <div className="container-wide flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* ロゴ */}
-          <Link href="/" className="flex items-baseline gap-2">
-            <span className="font-display text-2xl font-light italic tracking-widest text-gold-400">
-              {SITE_CONFIG.nameEn}
-            </span>
-            <span className="text-xs tracking-[0.3em] text-white/50">
-              {SITE_CONFIG.nameKana}
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt={SITE_CONFIG.name}
+              width={44}
+              height={44}
+              className="rounded object-contain"
+            />
           </Link>
 
           {/* デスクトップナビ */}

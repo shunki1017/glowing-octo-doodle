@@ -61,6 +61,11 @@ export function MenuSection() {
                           )}
                         </div>
                         <div className="text-right">
+                          {item.originalPrice && (
+                            <span className="block text-xs text-navy-300 line-through">
+                              {formatPrice(item.originalPrice)}
+                            </span>
+                          )}
                           <span className="font-bold text-navy-900">
                             {formatPrice(item.price)}
                           </span>

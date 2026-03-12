@@ -29,8 +29,8 @@ export const SITE_CONFIG = {
     description: "店舗裏 No.29・No.30",
   },
   sns: {
-    line: "https://lin.ee/xxxxxxxx",       // 要差し替え
-    instagram: "https://www.instagram.com/bimen_koriyama/",
-    twitter: "https://x.com/bimen_koriyama",
+    line: "https://line.me/R/ti/p/YVpl7JOuFj",
+    instagram: "https://www.instagram.com/bemen.cm/",
+    twitter: "https://x.com/bemen0815",
   },
 } as const;

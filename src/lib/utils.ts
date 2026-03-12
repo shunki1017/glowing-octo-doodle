@@ -10,5 +10,5 @@ export function formatPrice(price: number): string {
 }
 
 export function calcDiscountedPrice(price: number, discountRate: number): number {
-  return Math.floor(price * (1 - discountRate / 100));
+  return Math.round(price * (100 - discountRate) / 100);
 }

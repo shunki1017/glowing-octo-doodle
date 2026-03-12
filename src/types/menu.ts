@@ -5,6 +5,7 @@ export interface MenuItem {
   name: string;
   parts: string[];
   price: number;
+  originalPrice?: number;
   unit: string;
   popular?: boolean;
   note?: string;

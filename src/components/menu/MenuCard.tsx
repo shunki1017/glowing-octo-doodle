@@ -23,6 +23,9 @@ export function MenuCard({ item }: MenuCardProps) {
         )}
       </div>
       <div className="ml-6 shrink-0 text-right">
+        {item.originalPrice && (
+          <p className="text-xs text-navy-300 line-through">{formatPrice(item.originalPrice)}</p>
+        )}
         <p className="text-lg font-bold text-navy-900">{formatPrice(item.price)}</p>
         <p className="text-xs text-navy-400">{item.unit}</p>
       </div>

@@ -5,9 +5,13 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "サロンについて",
+  title: "サロンについて | 郡山市 男性スタッフのみのメンズ専門サロン",
   description:
-    "美menは郡山市のメンズ専門美容サロン。男性スタッフのみが対応し、光脱毛・HBL・ホワイトニング・DEPを都度払いで提供しています。",
+    "美men（びめん）は福島県郡山市のメンズ専門美容サロン。全スタッフが男性なのでVIO脱毛も安心。都度払い制で高額コース契約なし。夜22時まで営業、駐車場完備。",
+  keywords: [
+    "郡山市 メンズサロン", "男性スタッフ 脱毛", "メンズ専門 美容サロン 郡山",
+    "VIO脱毛 男性スタッフ", "プライベートサロン 郡山",
+  ],
 };
 
 const VALUES = [

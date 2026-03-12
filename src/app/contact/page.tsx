@@ -5,9 +5,13 @@ import { SITE_CONFIG } from "@/constants/siteConfig";
 import { Phone, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "お問い合わせ・ご予約",
+  title: "お問い合わせ・ご予約 | 無料カウンセリング受付中",
   description:
-    "美menへのお問い合わせ・ご予約はこちらから。Webフォーム・電話・LINEからお気軽にどうぞ。",
+    "美men（びめん）へのお問い合わせ・ご予約はこちら。Webフォーム・電話（024-983-3533）・LINEからお気軽にどうぞ。無料カウンセリング受付中。郡山市のメンズ専門美容サロン。",
+  keywords: [
+    "美men 予約", "郡山市 メンズ脱毛 予約", "美容サロン 無料カウンセリング 郡山",
+    "メンズサロン 問い合わせ 福島",
+  ],
 };
 
 export default function ContactPage() {

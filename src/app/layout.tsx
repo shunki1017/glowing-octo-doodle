@@ -28,42 +28,53 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+const siteUrl = "https://bimen-salon.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: `${SITE_CONFIG.nameEn} | ${SITE_CONFIG.tagline}`,
-    template: `%s | ${SITE_CONFIG.nameEn}`,
+    default: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
+    template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
   keywords: [
     "メンズ脱毛", "郡山市", "光脱毛", "ハリウッドブロウリフト", "HBL",
     "セルフホワイトニング", "DEP", "メンズサロン", "福島県",
-    "男性脱毛", "VIO脱毛", "痛くない脱毛",
+    "男性脱毛", "VIO脱毛", "痛くない脱毛", "美men", "びめん",
+    "郡山 メンズ脱毛", "郡山 美容サロン 男性",
   ],
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: process.env.NEXT_PUBLIC_SITE_URL,
-    siteName: SITE_CONFIG.nameEn,
-    title: `${SITE_CONFIG.nameEn} | ${SITE_CONFIG.tagline}`,
+    url: siteUrl,
+    siteName: SITE_CONFIG.name,
+    title: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
     description: SITE_CONFIG.description,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: SITE_CONFIG.name,
+        alt: `${SITE_CONFIG.name} - 郡山市のメンズ専門美容サロン`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_CONFIG.nameEn} | ${SITE_CONFIG.tagline}`,
+    title: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
     description: SITE_CONFIG.description,
     images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  verification: {
+    google: "MahyI-ZI5RhMYw6JnLisQPxdHQ2B2ULRZIt6Z8D4gpk",
   },
 };
 

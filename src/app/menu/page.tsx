@@ -7,9 +7,13 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "メニュー・料金",
+  title: "メニュー・料金 | 郡山市メンズ脱毛・HBL・ホワイトニング",
   description:
-    "美menのメニューと料金一覧。光脱毛・ハリウッドブロウリフト・セルフホワイトニング・DEP。すべて都度払い、高額なコース契約なし。",
+    "美menのメニューと料金一覧。郡山市の光脱毛（Aパーツ880円〜）・ハリウッドブロウリフト・セルフホワイトニング・DEP。すべて都度払いで高額なコース契約なし。新規最大80%OFF。",
+  keywords: [
+    "郡山市 メンズ脱毛 料金", "光脱毛 料金", "ハリウッドブロウリフト 郡山",
+    "HBL 郡山", "セルフホワイトニング 郡山", "DEP 郡山", "都度払い 脱毛",
+  ],
 };
 
 export default function MenuPage() {

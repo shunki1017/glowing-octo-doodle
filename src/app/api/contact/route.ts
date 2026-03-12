@@ -14,9 +14,13 @@ export async function POST(req: NextRequest) {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT ?? 587),
+    secure: false,
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
+    },
+    tls: {
+      rejectUnauthorized: false,
     },
   });
 
@@ -30,13 +34,19 @@ export async function POST(req: NextRequest) {
 ${message ?? "（なし）"}
   `.trim();
 
-  await transporter.sendMail({
-    from: `"美men Webサイト" <${process.env.SMTP_USER}>`,
-    to: process.env.CONTACT_TO_EMAIL,
-    replyTo: email,
-    subject: `【美men】お問い合わせ：${name} 様`,
-    text: mailBody,
-  });
+  try {
+    await transporter.sendMail({
+      from: `"美men Webサイト" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_TO_EMAIL,
+      replyTo: email,
+      subject: `【美men】お問い合わせ：${name} 様`,
+      text: mailBody,
+    });
+  } catch (err) {
+    console.error("Mail error:", err);
+    const message = err instanceof Error ? err.message : "Unknown error";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 
   return NextResponse.json({ ok: true });
 }

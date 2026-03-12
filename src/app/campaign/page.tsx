@@ -7,9 +7,13 @@ import { Badge } from "@/components/ui/Badge";
 import { formatPrice, calcDiscountedPrice } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "キャンペーン",
+  title: "キャンペーン・割引情報 | 新規最大80%OFF",
   description:
-    "美menのキャンペーン情報。新規最大80%OFF・学割・ポイントカード・紹介制度など、お得に通えるシステムをご紹介。",
+    "美menのキャンペーン情報。新規1回目80%OFF・2回目60%OFF・3回目40%OFF。学割（さらに5%OFF）・ポイントカード・紹介制度も充実。郡山市で最もお得に通えるメンズサロン。",
+  keywords: [
+    "郡山市 メンズ脱毛 安い", "光脱毛 初回割引", "メンズサロン 学割 郡山",
+    "脱毛 新規割引 福島", "郡山 メンズ脱毛 キャンペーン",
+  ],
 };
 
 export default function CampaignPage() {

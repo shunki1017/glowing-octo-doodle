@@ -17,7 +17,7 @@ export function AccessSection() {
             <div className="aspect-video w-full overflow-hidden bg-navy-100">
               {/* Google Maps埋め込み：実装時にAPIキー設定後に差し替え */}
               <iframe
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(SITE_CONFIG.address.full)}&output=embed`}
+                src="https://maps.google.com/maps?q=福島県郡山市菜根5丁目18-18+ダイユービル103&output=embed&hl=ja"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
