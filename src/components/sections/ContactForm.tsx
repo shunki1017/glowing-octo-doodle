@@ -36,7 +36,10 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error("送信に失敗しました。");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error ?? "送信に失敗しました。");
+      }
       setIsSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "送信に失敗しました。");
