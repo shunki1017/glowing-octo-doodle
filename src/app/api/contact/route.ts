@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import type { ContactFormData } from "@/types/common";
 
 export async function POST(req: NextRequest) {
@@ -11,18 +11,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "必須項目が不足しています。" }, { status: 400 });
   }
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST?.trim(),
-    port: Number((process.env.SMTP_PORT ?? 587).toString().trim()),
-    secure: false,
-    auth: {
-      user: process.env.SMTP_USER?.trim(),
-      pass: process.env.SMTP_PASS?.trim(),
-    },
-    tls: {
-      rejectUnauthorized: false,
-    },
-  });
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const mailBody = `
 お名前：${name}
@@ -35,9 +24,9 @@ ${message ?? "（なし）"}
   `.trim();
 
   try {
-    await transporter.sendMail({
-      from: `"美men Webサイト" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_TO_EMAIL,
+    await resend.emails.send({
+      from: "美men Webサイト <onboarding@resend.dev>",
+      to: process.env.CONTACT_TO_EMAIL!,
       replyTo: email,
       subject: `【美men】お問い合わせ：${name} 様`,
       text: mailBody,
