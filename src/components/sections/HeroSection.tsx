@@ -69,9 +69,19 @@ export function HeroSection() {
 
         {/* メインタイトル */}
         <h1 className="animate-fade-up mt-6 opacity-0 [animation-delay:400ms] [animation-fill-mode:forwards]">
-          <span className="font-display text-7xl font-light italic tracking-[0.1em] text-white sm:text-8xl md:text-9xl">
-            <span className="text-white">美</span>men
-          </span>
+          <div className="relative inline-block px-10 py-4 md:px-16 md:py-6">
+            {/* コーナー装飾 */}
+            <span className="absolute left-0 top-0 h-5 w-5 border-l-2 border-t-2 border-gold-400" />
+            <span className="absolute right-0 top-0 h-5 w-5 border-r-2 border-t-2 border-gold-400" />
+            <span className="absolute bottom-0 left-0 h-5 w-5 border-b-2 border-l-2 border-gold-400" />
+            <span className="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-gold-400" />
+            {/* 上下のライン */}
+            <span className="absolute left-5 right-5 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/50 to-transparent" />
+            <span className="absolute bottom-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
+            <span className="font-display text-7xl font-light italic tracking-[0.1em] text-white sm:text-8xl md:text-9xl">
+              <span className="text-white">美</span>men
+            </span>
+          </div>
         </h1>
 
         {/* キャッチコピー */}
