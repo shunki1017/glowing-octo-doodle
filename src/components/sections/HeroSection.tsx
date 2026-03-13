@@ -70,7 +70,7 @@ export function HeroSection() {
         {/* メインタイトル */}
         <h1 className="animate-fade-up mt-6 opacity-0 [animation-delay:400ms] [animation-fill-mode:forwards]">
           <span className="font-display text-7xl font-light italic tracking-[0.1em] text-white sm:text-8xl md:text-9xl">
-            <span className="text-gold-400 drop-shadow-[0_0_30px_rgba(228,174,42,0.5)]">美</span>men
+            <span className="text-white">美</span>men
           </span>
         </h1>
 
