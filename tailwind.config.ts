@@ -37,6 +37,16 @@ const config: Config = {
           950: "#321a07",
         },
         cream: "#faf8f5",
+        cyan: {
+          300: "#67e8f9",
+          400: "#22d3ee",
+          500: "#06b6d4",
+        },
+        purple: {
+          600: "#9333ea",
+          700: "#7e22ce",
+          800: "#6b21a8",
+        },
       },
       fontFamily: {
         sans: ["var(--font-noto-sans-jp)", "var(--font-inter)", "sans-serif"],
@@ -47,10 +57,13 @@ const config: Config = {
           "linear-gradient(135deg, #0a1128 0%, #1e2d55 50%, #2c3f6e 100%)",
         "gradient-gold":
           "linear-gradient(135deg, #ecc454 0%, #c9921a 100%)",
+        "gradient-tech":
+          "linear-gradient(135deg, #050915 0%, #0a1128 40%, #150a2a 70%, #0d1a3d 100%)",
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",
         "fade-in": "fadeIn 0.6s ease-out forwards",
+        "pulse-slow": "pulseSlow 5s ease-in-out infinite",
       },
       keyframes: {
         fadeUp: {
@@ -60,6 +73,10 @@ const config: Config = {
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        pulseSlow: {
+          "0%, 100%": { opacity: "0.2" },
+          "50%": { opacity: "0.5" },
         },
       },
     },

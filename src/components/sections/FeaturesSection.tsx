@@ -34,13 +34,13 @@ export function FeaturesSection() {
             const Icon = ICON_MAP[feature.icon];
             return (
               <AnimatedSection key={feature.id} delay={i * 80}>
-                <div className="group border border-white/10 p-8 transition-all duration-300 hover:border-gold-400/40 hover:bg-white/5">
+                <div className="group border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/5 hover:shadow-[0_0_30px_rgba(34,211,238,0.05)]">
                   <div className="flex items-start gap-4">
-                    <div className="shrink-0 rounded-full border border-gold-400/30 p-2.5 text-gold-400 transition-all duration-300 group-hover:border-gold-400 group-hover:bg-gold-400/10">
+                    <div className="shrink-0 rounded-full border border-cyan-400/30 p-2.5 text-cyan-400 transition-all duration-300 group-hover:border-cyan-400 group-hover:bg-cyan-400/10 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.2)]">
                       <Icon size={18} />
                     </div>
                     <div>
-                      <p className="text-[10px] tracking-[0.3em] text-gold-500 uppercase">
+                      <p className="text-[10px] tracking-[0.3em] text-cyan-500/70 uppercase">
                         {feature.titleEn}
                       </p>
                       <h3 className="mt-1 text-base font-bold tracking-wider text-white">

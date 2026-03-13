@@ -29,6 +29,45 @@
   }
 }
 
+/* テックグラデーションスタイル */
+.bg-grid-tech {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.particle-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(34, 211, 238, 0.7);
+  animation: particleFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0%, 100% { opacity: 0; transform: translateY(0) scale(0); }
+  25% { opacity: 0.8; transform: translateY(-15px) scale(1); }
+  75% { opacity: 0.3; transform: translateY(-50px) scale(0.5); }
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.35), transparent);
+  animation: scanDown 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes scanDown {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
 @layer components {
   .section-padding {
     @apply px-4 py-16 sm:px-6 md:py-24 lg:px-8;
