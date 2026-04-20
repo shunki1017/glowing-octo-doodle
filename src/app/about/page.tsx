@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "郡山市 メンズサロン", "男性スタッフ 脱毛", "メンズ専門 美容サロン 郡山",
     "VIO脱毛 男性スタッフ", "プライベートサロン 郡山",
   ],
+  alternates: {
+    canonical: "https://bimen-salon.vercel.app/about",
+  },
 };
 
 const VALUES = [
@@ -32,9 +35,22 @@ const VALUES = [
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "ホーム", item: "https://bimen-salon.vercel.app" },
+    { "@type": "ListItem", position: 2, name: "サロンについて", item: "https://bimen-salon.vercel.app/about" },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* ページヒーロー */}
       <section className="bg-gradient-brand pt-32 pb-16 text-center">
         <AnimatedSection>

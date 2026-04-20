@@ -12,11 +12,27 @@ export const metadata: Metadata = {
     "美men 予約", "郡山市 メンズ脱毛 予約", "美容サロン 無料カウンセリング 郡山",
     "メンズサロン 問い合わせ 福島",
   ],
+  alternates: {
+    canonical: "https://bimen-salon.vercel.app/contact",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "ホーム", item: "https://bimen-salon.vercel.app" },
+    { "@type": "ListItem", position: 2, name: "お問い合わせ・ご予約", item: "https://bimen-salon.vercel.app/contact" },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* ページヒーロー */}
       <section className="bg-gradient-brand pt-32 pb-16 text-center">
         <AnimatedSection>

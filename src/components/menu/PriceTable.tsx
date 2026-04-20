@@ -1,10 +1,19 @@
-import { Zap, Sparkles, Smile, Activity } from "lucide-react";
+import { Zap, Sparkles, Smile, Activity, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { MENU_CATEGORIES } from "@/constants/menu";
 import { MenuCard } from "./MenuCard";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Badge } from "@/components/ui/Badge";
 import { calcDiscountedPrice, formatPrice } from "@/lib/utils";
 import type { IconName } from "@/types/menu";
+
+const DETAIL_PAGE_MAP: Record<string, string> = {
+  "hair-removal": "/menu/koudatsu",
+  "hbl": "/menu/hbl",
+  "whitening": "/menu/whitening",
+  "skincare": "/menu/skincare",
+  "dep": "/menu/dep",
+};
 
 const ICON_MAP: Record<IconName, React.ElementType> = {
   zap: Zap,
@@ -39,6 +48,15 @@ export function PriceTable() {
               <p className="mt-4 text-sm leading-loose text-navy-500">
                 {category.description}
               </p>
+              {DETAIL_PAGE_MAP[category.id] && (
+                <Link
+                  href={DETAIL_PAGE_MAP[category.id]}
+                  className="mt-3 inline-flex items-center gap-1 text-xs text-gold-600 hover:underline"
+                >
+                  詳細ページを見る
+                  <ArrowRight size={12} />
+                </Link>
+              )}
 
               {/* 料金リスト */}
               <div className="mt-6">

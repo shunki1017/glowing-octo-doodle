@@ -14,11 +14,27 @@ export const metadata: Metadata = {
     "郡山市 メンズ脱毛 料金", "光脱毛 料金", "ハリウッドブロウリフト 郡山",
     "HBL 郡山", "セルフホワイトニング 郡山", "DEP 郡山", "都度払い 脱毛",
   ],
+  alternates: {
+    canonical: "https://bimen-salon.vercel.app/menu",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "ホーム", item: "https://bimen-salon.vercel.app" },
+    { "@type": "ListItem", position: 2, name: "メニュー・料金", item: "https://bimen-salon.vercel.app/menu" },
+  ],
 };
 
 export default function MenuPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* ページヒーロー */}
       <section className="bg-gradient-brand pt-32 pb-16 text-center">
         <AnimatedSection>

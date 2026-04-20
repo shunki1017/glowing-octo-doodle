@@ -14,11 +14,27 @@ export const metadata: Metadata = {
     "郡山市 メンズ脱毛 安い", "光脱毛 初回割引", "メンズサロン 学割 郡山",
     "脱毛 新規割引 福島", "郡山 メンズ脱毛 キャンペーン",
   ],
+  alternates: {
+    canonical: "https://bimen-salon.vercel.app/campaign",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "ホーム", item: "https://bimen-salon.vercel.app" },
+    { "@type": "ListItem", position: 2, name: "キャンペーン", item: "https://bimen-salon.vercel.app/campaign" },
+  ],
 };
 
 export default function CampaignPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* ページヒーロー */}
       <section className="bg-gradient-brand pt-32 pb-16 text-center">
         <AnimatedSection>
