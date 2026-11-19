@@ -83,9 +83,31 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* ナビ */}
+          {/* メニュー */}
           <div>
             <h3 className="mb-4 text-xs font-medium tracking-[0.3em] text-white/40 uppercase">
+              Menu
+            </h3>
+            <ul className="space-y-2">
+              {[
+                { href: "/menu/koudatsu", label: "郡山メンズ脱毛（光脱毛）" },
+                { href: "/menu/hbl", label: "ハリウッドブロウリフト" },
+                { href: "/menu/whitening", label: "セルフホワイトニング" },
+                { href: "/menu/dep", label: "DEP・痩身" },
+                { href: "/menu/skincare", label: "フォトフェイシャル" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm tracking-widest transition-colors hover:text-gold-400"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mb-4 mt-8 text-xs font-medium tracking-[0.3em] text-white/40 uppercase">
               Navigation
             </h3>
             <ul className="space-y-2">

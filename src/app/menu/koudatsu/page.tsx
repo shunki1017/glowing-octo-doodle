@@ -3,14 +3,16 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTASection } from "@/components/sections/CTASection";
 import { formatPrice } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "郡山市メンズ光脱毛｜男性スタッフ対応・都度払い | 美men",
+  title: "脱毛 郡山｜メンズ脱毛なら美men｜男性スタッフ対応・都度払い",
   description:
-    "郡山市のメンズ専門サロン「美men」の光脱毛。ヒゲ・VIO・全身に対応。男性スタッフのみで安心。Aパーツ880円〜（新規初回80%OFF）、高額コース不要の都度払い制。夜22時まで営業・駐車場完備。",
+    "脱毛郡山でお探しなら、メンズ専門サロン美men（びめん）。郡山市で光脱毛・ヒゲ脱毛・VIO脱毛・全身脱毛に対応。完全男性スタッフで安心。Aパーツ880円〜（新規初回80%OFF）、高額コース不要の都度払い制。夜22時まで営業・駐車場完備。",
   keywords: [
+    "脱毛 郡山", "メンズ脱毛 郡山", "脱毛郡山", "メンズ脱毛郡山",
     "郡山 メンズ脱毛", "郡山市 光脱毛 男性", "郡山 ヒゲ脱毛", "郡山 VIO脱毛 メンズ",
     "郡山 全身脱毛 男性", "郡山市 脱毛 男性スタッフ", "福島 メンズ脱毛 郡山",
     "郡山 脱毛 都度払い", "郡山 脱毛 安い", "郡山市 メンズサロン 脱毛",
@@ -98,23 +100,66 @@ const FAQS = [
     q: "何回通えば効果が出ますか？",
     a: "個人差はありますが、一般的に6〜12回程度の施術で効果を実感される方が多いです。都度払い制なので、自分のペースで無理なく通えます。",
   },
+  {
+    q: "郡山駅からのアクセスは？",
+    a: "美menは郡山市菜根5丁目にあり、お車での来店が便利です。店舗裏に専用駐車場（No.29・No.30）を2台分ご用意しています。営業時間は12:00〜22:00です。",
+  },
+  {
+    q: "脱毛の痛みが心配です。郡山で痛くない脱毛はありますか？",
+    a: "美menで使用する光（フラッシュ）脱毛は、従来のレーザー脱毛に比べて痛みが少ないのが特徴です。初めての方でも安心して受けていただけます。気になる方は無料カウンセリングでご相談ください。",
+  },
 ];
+
+const SELECTION_POINTS = [
+  {
+    title: "完全男性スタッフ制",
+    body: "美menは施術からカウンセリングまですべて男性スタッフが対応。VIO脱毛など、デリケートな部位の施術も同性スタッフだから安心です。",
+  },
+  {
+    title: "都度払い制で安心の料金体系",
+    body: "高額なコース契約は一切不要。毎回その場でお支払いの都度払い制だから、自分のペースで無理なく通えます。Aパーツは通常4,400円、新規初回は880円から。",
+  },
+  {
+    title: "夜22時まで営業",
+    body: "仕事帰りにも通いやすい夜22時まで営業（最終受付21:00）。平日でも時間を気にせず通えるのが、郡山で働く男性に選ばれるポイントです。",
+  },
+  {
+    title: "駐車場完備でアクセス便利",
+    body: "店舗裏に専用駐車場2台完備（No.29・No.30）。お車でのご来店も安心です。郡山市菜根エリアに位置し、市内各所からアクセスしやすい立地です。",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
 
 export default function KoudatsuPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
+      <Breadcrumb items={[{ label: "メニュー・料金", href: "/menu" }, { label: "光脱毛" }]} />
 
       {/* ヒーロー */}
-      <section className="bg-gradient-brand pt-32 pb-16 text-center">
+      <section className="bg-gradient-brand pt-8 pb-16 text-center">
         <AnimatedSection>
           <p className="text-xs font-medium tracking-[0.5em] text-gold-400 uppercase">Hair Removal</p>
           <h1 className="mt-4 text-3xl font-bold tracking-widest text-white md:text-4xl">
-            郡山市のメンズ光脱毛
+            郡山のメンズ脱毛なら美men
           </h1>
           <p className="mt-4 text-sm text-white/60">
-            男性スタッフのみ対応 ・ ヒゲ・VIO・全身 ・ 都度払いで安心
+            光脱毛 ・ ヒゲ・VIO・全身対応 ・ 男性スタッフのみ ・ 都度払いで安心
           </p>
         </AnimatedSection>
       </section>
@@ -202,6 +247,33 @@ export default function KoudatsuPage() {
               ))}
             </div>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* 郡山でメンズ脱毛を選ぶポイント */}
+      <section className="bg-cream section-padding">
+        <div className="container-narrow">
+          <AnimatedSection>
+            <SectionHeader en="Why BIMEN" ja="郡山でメンズ脱毛サロンを選ぶポイント" />
+          </AnimatedSection>
+          <AnimatedSection delay={100}>
+            <p className="mt-8 text-sm leading-[2.2] text-navy-600">
+              郡山市内にはいくつかの脱毛サロンがありますが、
+              <strong className="text-navy-900">メンズ専門</strong>のサロンは限られています。
+              美men（びめん）は男性のためだけに設計されたメンズ脱毛サロンとして、
+              以下のポイントで多くの郡山の男性にお選びいただいています。
+            </p>
+          </AnimatedSection>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {SELECTION_POINTS.map((point, i) => (
+              <AnimatedSection key={point.title} delay={150 + i * 80}>
+                <div className="h-full border border-navy-200 bg-white p-6">
+                  <h3 className="font-bold tracking-wider text-navy-900">{point.title}</h3>
+                  <p className="mt-3 text-sm leading-loose text-navy-500">{point.body}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 

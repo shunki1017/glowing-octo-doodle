@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
+import { SeoTextSection } from "@/components/sections/SeoTextSection";
 import { MenuSection } from "@/components/sections/MenuSection";
 import { CampaignSection } from "@/components/sections/CampaignSection";
 import { AccessSection } from "@/components/sections/AccessSection";
@@ -8,9 +9,9 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FaqSection } from "@/components/sections/FaqSection";
 
 export const metadata: Metadata = {
-  title: "美men | 郡山市のメンズ専門美容サロン｜光脱毛・HBL・ホワイトニング",
+  title: "郡山市メンズ脱毛・美容サロン 美men｜光脱毛・HBL・ホワイトニング",
   description:
-    "福島県郡山市のメンズ専門美容サロン「美men（びめん）」。光脱毛・ハリウッドブロウリフト（HBL）・セルフホワイトニング・DEPを都度払いで提供。男性スタッフのみ対応で安心。新規最大80%OFF。",
+    "郡山でメンズ脱毛をお探しなら美men（びめん）。福島県郡山市のメンズ専門美容サロンで光脱毛・ハリウッドブロウリフト（HBL）・セルフホワイトニング・DEPを都度払いで提供。男性スタッフのみ対応で安心。新規最大80%OFF。",
   alternates: {
     canonical: "https://bimen-salon.vercel.app",
   },
@@ -75,8 +76,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
   name: "美men",
-  alternateName: ["びめん", "BIMEN"],
-  description: "福島県郡山市のメンズ専門美容サロン。光脱毛・ハリウッドブロウリフト・セルフホワイトニング・DEPを都度払いで提供。",
+  alternateName: ["びめん", "BIMEN", "美men郡山"],
+  description: "福島県郡山市のメンズ専門美容サロン。光脱毛・ハリウッドブロウリフト・セルフホワイトニング・DEPを都度払いで提供。郡山でメンズ脱毛をお探しなら美men。",
   url: "https://bimen-salon.vercel.app",
   telephone: "024-983-3533",
   address: {
@@ -87,6 +88,15 @@ const jsonLd = {
     streetAddress: "菜根５丁目18-18 ダイユービル103",
     addressCountry: "JP",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 37.3828,
+    longitude: 140.3714,
+  },
+  areaServed: [
+    { "@type": "City", name: "郡山市" },
+    { "@type": "State", name: "福島県" },
+  ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -95,6 +105,17 @@ const jsonLd = {
   },
   priceRange: "¥880〜",
   image: "https://bimen-salon.vercel.app/og-image.jpg",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "メンズ美容メニュー",
+    itemListElement: [
+      { "@type": "OfferCatalog", name: "メンズ光脱毛", description: "ヒゲ・VIO・全身の光脱毛" },
+      { "@type": "OfferCatalog", name: "ハリウッドブロウリフト（HBL）", description: "メンズ眉毛サロン" },
+      { "@type": "OfferCatalog", name: "セルフホワイトニング", description: "歯のホワイトニング" },
+      { "@type": "OfferCatalog", name: "DEP・痩身", description: "ダーマエレクトロポレーション・痩身メニュー" },
+      { "@type": "OfferCatalog", name: "フォトフェイシャル・スキンケア", description: "肌のキメを整える" },
+    ],
+  },
   sameAs: [
     "https://www.instagram.com/bimen_koriyama/",
     "https://x.com/bimen_koriyama",
@@ -114,6 +135,7 @@ export default function HomePage() {
       />
       <HeroSection />
       <FeaturesSection />
+      <SeoTextSection />
       <MenuSection />
       <CampaignSection />
       <AccessSection />

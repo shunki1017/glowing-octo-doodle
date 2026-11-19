@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTASection } from "@/components/sections/CTASection";
 import { formatPrice } from "@/lib/utils";
 
@@ -82,8 +83,10 @@ export default function DepPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
 
+      <Breadcrumb items={[{ label: "メニュー・料金", href: "/menu" }, { label: "DEP・痩身" }]} />
+
       {/* ヒーロー */}
-      <section className="bg-gradient-brand pt-32 pb-16 text-center">
+      <section className="bg-gradient-brand pt-8 pb-16 text-center">
         <AnimatedSection>
           <p className="text-xs font-medium tracking-[0.5em] text-gold-400 uppercase">DEP &amp; Body Slimming</p>
           <h1 className="mt-4 text-3xl font-bold tracking-widest text-white md:text-4xl">

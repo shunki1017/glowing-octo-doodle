@@ -87,7 +87,7 @@ export function HeroSection() {
 
         {/* キーワードタグ */}
         <div className="animate-fade-up mt-8 flex flex-wrap justify-center gap-3 opacity-0 [animation-delay:800ms] [animation-fill-mode:forwards]">
-          {["光脱毛", "HBL", "ホワイトニング", "DEP", "男性スタッフのみ"].map((tag) => (
+          {["メンズ脱毛", "光脱毛", "HBL", "ホワイトニング", "DEP", "男性スタッフのみ"].map((tag) => (
             <span
               key={tag}
               className="border border-cyan-400/30 bg-cyan-400/5 px-4 py-1.5 text-xs tracking-wider text-cyan-300/70 backdrop-blur-sm"

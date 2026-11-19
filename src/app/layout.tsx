@@ -38,10 +38,11 @@ export const metadata: Metadata = {
   },
   description: SITE_CONFIG.description,
   keywords: [
+    "脱毛 郡山", "メンズ脱毛 郡山", "脱毛郡山", "メンズ脱毛郡山",
     "メンズ脱毛", "郡山市", "光脱毛", "ハリウッドブロウリフト", "HBL",
     "セルフホワイトニング", "DEP", "メンズサロン", "福島県",
-    "男性脱毛", "VIO脱毛", "痛くない脱毛", "美men", "びめん",
-    "郡山 メンズ脱毛", "郡山 美容サロン 男性",
+    "男性脱毛", "VIO脱毛", "ヒゲ脱毛 郡山", "痛くない脱毛", "美men", "びめん",
+    "郡山 メンズ脱毛", "郡山 美容サロン 男性", "郡山 脱毛 安い",
   ],
   openGraph: {
     type: "website",
@@ -88,6 +89,12 @@ export default function RootLayout({
       lang="ja"
       className={`${inter.variable} ${notoSansJP.variable} ${cormorant.variable}`}
     >
+      <head>
+        <meta name="geo.region" content="JP-07" />
+        <meta name="geo.placename" content="郡山市" />
+        <meta name="geo.position" content="37.3828;140.3714" />
+        <meta name="ICBM" content="37.3828, 140.3714" />
+      </head>
       <body>
         <Header />
         <main>{children}</main>
